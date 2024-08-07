@@ -2,11 +2,13 @@ var QueryHelper = {
     getInsert: function (data) {
       let sql = `INSERT INTO User (
         email,
-        hashpassword
+        hashpassword,
+        role
         )
         VALUES (
           '`+ data.email + `',
-          '`+ data.hashPassword + `'
+          '`+ data.hashPassword + `',
+          '`+ data.role + `'
         );`
       return sql;
     }
