@@ -14,6 +14,7 @@ exports.add = async (data, callBack) => {
     let sql = queryHelper.getUser(data);
     dbHelper.executeSelectCommand(sql, [], async function (obj) {
         var signInData = obj.Data;
+        var jwtSendData=signInData[0];
         if (signInData.length > 0) {
             try {
                 // Compare the password asynchronously
@@ -21,12 +22,11 @@ exports.add = async (data, callBack) => {
                 
                 if (isMatch) {
                     // Generate JWT token
-                    jwt.sign({ user: data }, config.jwt.jwt_secret, (error, token) => {
+                    jwt.sign({ user: jwtSendData }, config.jwt.jwt_secret, (error, token) => {
                         if (error) {
                             console.error('Error generating token:', error);
                             return callBack({ Status: 'Error', Message: 'Error generating token' });
                         }
-
                         console.log(token);
                         callBack({ token });
                     });
