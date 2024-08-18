@@ -9,7 +9,6 @@ var DBHelper = {
     var message = "";
     let db = new sqlite3.Database(dbPath, sqlite3.OPEN_READWRITE, (err) => {
       if (err) {
-
         callback({ Status: false, Message: err.message, lastId: 0 });
         return;
       }
@@ -22,7 +21,6 @@ var DBHelper = {
         db.serialize(function () {
           db.run("begin transaction");
           db.run(sql, params, function (err) {
-       
             if (err) {
               stmtFailed = true;
               message = err.message;
@@ -40,7 +38,6 @@ var DBHelper = {
           } else {
             db.run("rollback", function (err) {
               callback({ Status: false, Message: message, lastId: 0 });
-
             });
           }
           db.close();
@@ -59,7 +56,6 @@ var DBHelper = {
       // Enable WAL mode
       db.run('PRAGMA journal_mode=WAL;', (err) => {
         if (err) {
-        //throw err;
           callback({ Status: false, Message: err.message, Data: [] });
           return;
         }
@@ -114,7 +110,6 @@ var DBHelper = {
           callback({ Status: false, Message: err.message, lastId: 0 });
           return;
         }
-    });
         db.serialize(function () {
           db.run("begin transaction");
   
@@ -134,7 +129,6 @@ var DBHelper = {
                   callBackSent = true;
                   db.run("rollback", function (error) {
                     callback({ Status: false, Message: err.message, lastId: 0, ErrData: orgData });
-
                   });
                 } else {
                   if (rowCount == data.length) {
@@ -152,7 +146,6 @@ var DBHelper = {
             }
           } else {
             callback({ Status: false, Message: "Batch insert failed. Data is not found", lastId: 0, data: data });
-
           }
         });
       });

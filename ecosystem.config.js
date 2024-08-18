@@ -3,10 +3,10 @@ module.exports = {
         {
             name: 'MyService',
             script: './wrapper.js',
-            args: 'D:/myproj/NodeService/dist/config.json', // Pass the config file if needed
+            args: 'D:/myproj/Node.jsBackend/NodeJsBackendAPI/dist/config.json', // Pass the config file if needed
             interpreter: 'none', // IMPORTANT: Tell PM2 not to use a Node.js interpreter
-            out_file: 'D:/myproj/NodeService/logs/output.log', // Output log file
-            error_file: 'D:/myproj/NodeService/logs/error.log', // Error log file
+            out_file: 'D:/myproj/Node.jsBackend/NodeJsBackendAPI/logs/output.log', // Output log file
+            error_file: 'D:/myproj/Node.jsBackend/NodeJsBackendAPI/logs/error.log', // Error log file
             instances: 'max',
             exec_mode: 'cluster',
             watch: false,

@@ -7,7 +7,7 @@ const jwt=require('jsonwebtoken');
 const path = require('path');
 
 // Use __dirname to get the current directory of the executing script
-const configPath = path.join('D:/myproj/NodeService', 'config.json');
+const configPath = path.join('D:/myproj/Node.jsBackend/NodeJsBackendAPI', 'config.json');
 let rawdata = fs.readFileSync(configPath);
 let config = JSON.parse(rawdata);
 
@@ -20,6 +20,5 @@ const server = app.listen(config.Ports.serverPort, function () {
 	const port = server.address().port;
     server.timeout = 108000;
     console.log(`Express Server Started at http://localhost:${port}`);
-	
     
 });
