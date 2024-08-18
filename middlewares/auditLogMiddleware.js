@@ -8,8 +8,8 @@ exports.auditLog = (req,res, next) => {
     details.user=user;    
     details.method=req.method;
     details.url= req.originalUrl;
-    details.body= req.body;
-    details.params= req.params;
+    details.body= JSON.stringify(req.body);;
+    details.params= JSON.stringify(req.params);
     details.date=getCurrentDateTime();
   const sql = queryHelper.getInsert(details);
   dbHelper.executeSelectCommand(sql, [], function (obj) {
