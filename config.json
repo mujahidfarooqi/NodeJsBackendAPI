@@ -1,0 +1,8 @@
+{
+    "Ports":{
+        "serverPort":15713
+    },
+    "jwt":{
+        "jwt_secret" :"myS33!!creeeT"
+    }
+}
