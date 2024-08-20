@@ -9,7 +9,6 @@ This project is a secure web application that leverages modern authentication an
 - **Database Management**: SQLite is used as the database engine for storing user data and other application information. The application establishes and manages a connection to the SQLite database efficiently.
 - **PM2 for Process Management**: PM2 is employed to manage and scale multiple instances of the application, ensuring high availability and performance under load.
 - **Automated Builds**: A `build.bat` script is provided to automate the creation of production-ready builds, simplifying the deployment process.
-- **Multilingual Support**: Includes a multilingual feature that allows the application to support multiple languages. This feature can be configured to provide localization and internationalization based on user preferences or regional settings.
 - **Audit Trail/Logs**: Maintains an audit trail and logs for monitoring and tracking changes in the application. This feature helps in tracking user activities, system events, and potential security incidents.
 
 This project is designed to be a secure and scalable solution for managing user access and protecting sensitive data.
