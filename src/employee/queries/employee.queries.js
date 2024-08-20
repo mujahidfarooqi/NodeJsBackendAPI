@@ -2,12 +2,26 @@
 var QueryHelper = {
     getInsert: function (data) {
       let sql = `INSERT INTO Employee (
-        name,
-        position
+        firstName,
+        lastName,
+        position,
+        phone,
+        join_date,
+        gender,
+        address,
+        city,
+        state
         )
         VALUES (
-          '`+ data.name + `',
-          '`+ data.position + `'
+          '`+ data.firstName + `',
+          '`+ data.lastName + `',
+          '`+ data.position + `',
+          '`+ data.phone + `',
+          '`+ data.joiningDate + `',
+          '`+ data.gender + `',
+          '`+ data.address + `',
+          '`+ data.city + `',
+          '`+ data.state + `'
         );`
       return sql;
     },
